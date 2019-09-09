@@ -1,0 +1,8 @@
+yum -y update
+yum -y install gcc ncurses-devel libtermcap-devel libedit-devel sox
+yum -y install gcc-c++ newt-devel zlib-devel unixODBC-devel bzip2 patch
+yum -y install libtool make wget autoconf automake m4 perl sed libuuid-devel
+yum -y install libxml2 libxslt libxml2-devel sqlite sqlite-devel libtool-ltdl-devel
+
+sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/sysconfig/selinux
+sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config

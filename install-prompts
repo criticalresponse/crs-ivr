@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir -p /var/lib/asterisk/sounds/custom
+rm -f /var/lib/asterisk/sounds/custom/*
+
+FILES=./prompts/*.wav
+for f in $FILES
+do
+  echo "$f -> /var/lib/asterisk/sounds/custom/$(basename $f)."
+  sox $f -r 8000 -c 1 -b 16 /var/lib/asterisk/sounds/custom/$(basename ${f})
+done

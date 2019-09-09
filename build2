@@ -1,0 +1,11 @@
+rm -rf asterisk-16*
+wget http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz
+tar xvfz asterisk-16-current.tar.gz
+rm -f asterisk-16-current.tar.gz
+cp app_crsivr.* asterisk-16*/apps
+cd asterisk-16*
+./configure --libdir=/usr/lib64
+make menuselect
+contrib/scripts/get_mp3_source.sh
+make
+
